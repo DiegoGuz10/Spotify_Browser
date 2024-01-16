@@ -1,0 +1,9 @@
+
+.table-container {
+    height: 58vh; /* Set the desired height for the scrollable area */
+    width: 45vw;
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    /* You can also add additional styles like padding, border, etc. if necessary */
+  }
+  
+  
