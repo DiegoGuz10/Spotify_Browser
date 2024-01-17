@@ -1,34 +1,25 @@
 <div id="wholePage">
 	<div id="trackSection" *ngIf="track">
-		<!--TODO: populate with track name-->
 		<h1>{{track.name}}</h1>
 		<p>
-			<!--TODO: link to album page, display album name-->
 			Track on <a href="./album/{{track.album.id}}">{{this.track.album.name}}</a>
 		</p>
 		<div>
-			<!--TODO: loop over track's artists-->
 			<p *ngFor="let artist of this.track.album.artists">
-				<!--TODO: link to artist page, display artist name-->
 				Artist: <a href="./artist/{{artist.id}}">{{artist.name}}</a>
 			</p>
 		</div>
 		<p>
-			<!--TODO: populate with track duration-->
 			Duration: {{track.durationStr}}
 		</p>
 		<p>
-			<!--TODO: link to track page on spotify, display track name-->
 			<a class="btn btn-light" role="button" target="_blank" [href]="this.track.url">Open {{track.name}} on Spotify</a>
 		</p>
 	</div>
 	<div id="keywordsSection" *ngIf="audioFeatures" >
-		<!--TODO: loop over types of features and create a thermometer component for each-->
 		<p *ngFor="let feature of audioFeatures">
 			<app-thermometer [featureType]="feature.name" [percentString]="feature.percentageString" [color]="feature.color">
 			</app-thermometer>
 		</p>
 	</div>
 </div>
-
-<!-- https://getbootstrap.com/docs/5.3/components/progress/#backgrounds -->
