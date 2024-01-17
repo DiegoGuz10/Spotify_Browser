@@ -1,17 +1,6 @@
-<!--TODO: Define click callback to load about me information-->
-
 <button class="btn btn-light" (click)="updateAboutMe()">Load info about me</button>
-<!--TODO: replace ??? to bind to name-->
 <h3>Logged in user: <span [innerHTML]="name">???</span></h3>
-<!--TODO: bind img src's to profile_pic-->
 <img src="{{profile_pic}}">
 <p>
-	<!--TODO: bind link's href to profile_link-->
 	<a class="btn btn-light" target="_blank" [(href)]="profile_link">Open profile on Spotify</a>	
 </p>
-
-<!--
-	https://stackoverflow.com/questions/40336155/binding-appending-to-href
-	https://www.w3schools.com/jsref/event_onclick.asp
-	https://stackoverflow.com/questions/52579644/text-binding-between-input-and-span-in-angular
--->

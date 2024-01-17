@@ -20,17 +20,6 @@ export class SpotifyService {
 
 
   private sendRequestToExpress(endpoint:string):Promise<any> {
-    //TODO: use the injected http Service to make a get request to the Express endpoint and return the response.
-    //the http service works similarly to fetch(). It may be useful to call .toPromise() on any responses.
-    //update the return to instead return a Promise with the data from the Express server
-    //Note: toPromise() is a deprecated function that will be removed in the future.
-    //It's possible to do the assignment using lastValueFrom, but we recommend using toPromise() for now as we haven't
-    //yet talked about Observables. https://indepth.dev/posts/1287/rxjs-heads-up-topromise-is-being-deprecated
-
-
-    //Taken from the Slack post made by Prof. Baldwin made Nov 3, 9:13AM
-    //https://rxjs.dev/api/index/function/firstValueFrom
-    //Supposed to make an API request at the given endpoint, then returns the data type for each API call
     return firstValueFrom(this.http.get(this.expressBaseUrl + endpoint)).then((response) => {
       return response;
     }, (err) => {
@@ -40,7 +29,6 @@ export class SpotifyService {
 
 
   aboutMe():Promise<ProfileData> {
-    //This line is sending a request to express, which returns a promise with some data. We're then parsing the data
     return this.sendRequestToExpress('/me').then((data) => {
       return new ProfileData(data);
     });
@@ -48,16 +36,8 @@ export class SpotifyService {
 
 
   searchFor(category:string, resource:string):Promise<ResourceData[]> {
-    //TODO: identify the search endpoint in the express webserver (routes/index.js) and send the request to express.
-    //Make sure you're encoding the resource with encodeURIComponent().
-    //Depending on the category (artist, track, album), return an array of that type of data.
-    //JavaScript's "map" function might be useful for this, but there are other ways of building the array.
     let resources: ResourceData[]
     let encodedResource = encodeURIComponent(resource);
-    
-    //sends a request to Express to the search endpoint, then determines what type of data to return through the
-    //category. Looks through the data to find the appropriate items, then maps them into an array of ResourceData
-    //and returns this array
     return this.sendRequestToExpress('/search'+'/'+category+'/'+encodedResource).then((data) => {
       
       if(category=='artist'){

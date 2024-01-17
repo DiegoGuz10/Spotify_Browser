@@ -1,30 +1,18 @@
 <div id = "wholePage" *ngIf="album" >
     <div id = "albumPic">
-        <!--TODO: populate with album name-->
         <h1>{{album.name}}</h1>
-        <!--TODO: set src to album image URL-->
         <img id="albumPicImg" [src]="this.album.imageURL">
-        <!--TODO: loop over album artists-->
         <p>
-            <!--TODO: link to artist page, display artist name-->
             <li *ngFor="let artist of this.album.artists">
                 Artist: <a href="./artist/{{artist.id}}">{{artist.name}}</a>
             </li>
         </p>
         <p>
-            <!--TODO: link to album page on spotify, display album name-->
             <a class="btn btn-light" role="button" target="_blank" [href]="this.album.url">Open {{album.name}} on Spotify</a>
         </p>
     </div>
     <div id = "albumTracks">
         <h3>Album Tracks</h3>
-        <!--TODO: display the track list for the album. Hide the artist and album columns because they are redundant on this page.-->
         <app-track-list id ="albumTracksRows" [tracks]="this.tracks" hideArtist="true" hideAlbum="true"></app-track-list>
     </div>
 </div>
-
-
-<!--
-    https://www.geeksforgeeks.org/angular10-ngfor-directive/#
-    https://www.w3schools.com/tags/tag_a.asp
--->

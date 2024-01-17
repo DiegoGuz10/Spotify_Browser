@@ -3,7 +3,6 @@
     grid-template-columns: 1fr 1fr;
     width: 100%;
     height: 100%;
-    /* place-items: center; */
 
 }
 
@@ -13,8 +12,7 @@
 }
 
 #albumTracksRows{
-	height: 85vh; /* Set the desired height for the scrollable area */
-    /* width: 45vw; */
+	height: 85vh; 
     overflow-y: auto;
 }
 
@@ -25,10 +23,6 @@
 
     justify-content: flex-start;
     align-items: center;
-  
-    /* justify-content: center;
-    align-items: center; */
-    
 }
 
 #albumTracks{
@@ -37,6 +31,4 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    /* justify-content: center; */
-    /* align-items: center; */
 }

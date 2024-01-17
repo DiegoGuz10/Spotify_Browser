@@ -1,12 +1,6 @@
 <div class="progress">
-	<!--TODO: set style.background-color based on the audio feature's color and style.width via the audio feature's percent. Display feature name and percent.-->
-  <!-- this is ONE bar, so the class only needs like 3 input fields? -->
   <div class="progress-bar" role="progressbar" [style.background-color]="color" [style.width]="percentString">
   	<span class="progress-bar-text">{{featureType}}: {{percentString}}</span>
   </div>
 </div>
 
-<!--
-  https://stackoverflow.com/questions/45749533/what-is-input-used-for-in-angular
-  https://www.w3schools.com/cssref/pr_background-color.php
--->
